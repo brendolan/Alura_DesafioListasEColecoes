@@ -46,7 +46,7 @@ public class CreditCard extends Card{
 	}
 
 	public void addPurchase(String storeName, LocalDate purchaseDate, double purchaseAmount) {
-		if ((purchaseAmount + getTotalPurchaseAmount()) < getCreditLimit()) {
+		if ((purchaseAmount + getTotalPurchaseAmount()) <= getCreditLimit()) {
 			purchases.add(new Purchase(storeName, purchaseDate, purchaseAmount));	
 		} else {		
 			throw new LimitExceededException("O Limite não é suficiente para esta compra! Limite disponivel: " + getAvailableLimit());
